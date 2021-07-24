@@ -1,9 +1,15 @@
 name: ci
 
-on: push
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
       - name: Tests
+        uses: actions/checkout@v2
