@@ -8,3 +8,5 @@ jobs:
     steps:
       - name: Tests
         uses: actions/checkout@v2
+        run: make test
+        working-directory: ./project
