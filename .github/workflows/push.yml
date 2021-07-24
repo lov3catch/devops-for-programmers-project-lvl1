@@ -1,11 +1,6 @@
 name: ci
 
-on:
-  push:
-    branches:
-      - '**'
-    tags:
-      - '**'
+on: push
 
 jobs:
   tests:
