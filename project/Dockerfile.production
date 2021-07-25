@@ -1,0 +1,13 @@
+FROM node:14.6
+WORKDIR /app
+
+# Важно для кеширования слоев
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+COPY Makefile Makefile
+
+RUN npm install
+RUN npm install pg --save
+
+COPY . .
+ENTRYPOINT npm start

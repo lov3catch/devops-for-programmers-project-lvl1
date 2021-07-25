@@ -1,25 +1,36 @@
 version: '3'
-#services:
-#  app:
-#    build: .
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
 #    tty: true
-#    depends_on:
-#      - db
-#    volumes:
-#      - .:/app
-#    ports:
-#      - "8080:8080"
-#    expose:
-#      - 8080
-#  caddy:
-#    image: caddy
-#    restart: unless-stopped
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#    expose:
-#      - 80
-#      - 443
-#    volumes:
-#      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
-#      - $PWD:/srv
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app
+    expose:
+      - 80
+      - 443
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
+

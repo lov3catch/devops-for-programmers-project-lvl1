@@ -4,14 +4,17 @@ install-deps:
 test:
 	npx jest tests/root.test.js
 
-docker-build:
-	docker build . -t hxlt-project
+d-build:
+	docker build . -t hxlt-lvl1
 
-docker-tag:
-	docker tag hxlt-project lov3catch/hxlt-project
+d-test:
+	docker run -itv ${PWD}:/app hxlt-lvl1
 
-docker-push:
-	docker push lov3catch/hxlt-project
+dc-restart:
+	docker-compose down
+	docker-compose build
+	docker-compose up --abort-on-container-exit
 
-ci:
-	test
+dc-test:
+	make docker-build
+	docker run -itv ${PWD}:/app hxlt-lvl1
