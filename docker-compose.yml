@@ -12,4 +12,4 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/app
+      - ./project:/app
