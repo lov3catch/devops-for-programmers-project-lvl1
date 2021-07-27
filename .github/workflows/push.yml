@@ -9,5 +9,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Tests
-        run: npx jest tests/root.test.js
+        run: make test
         working-directory: ./app
