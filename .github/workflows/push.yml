@@ -9,5 +9,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Tests
-        run: make ci-test
+        run: npx jest tests/root.test.js
         working-directory: ./project

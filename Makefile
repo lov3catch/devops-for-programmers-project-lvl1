@@ -22,5 +22,3 @@ docker-test:
 	docker build . -t hxlt-lvl1
 	docker run -itv ${PWD}/project:/app hxlt-lvl1
 
-ci-test:
-	npx jest tests/root.test.js
