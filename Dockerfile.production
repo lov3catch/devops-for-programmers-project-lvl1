@@ -2,11 +2,11 @@ FROM node:14.6
 WORKDIR /app
 
 # Важно для кеширования слоев
-COPY ./project/package.json package.json
-COPY ./project/package-lock.json package-lock.json
+COPY ./app/package.json package.json
+COPY ./app/package-lock.json package-lock.json
 
 RUN npm install
 RUN npm install pg --save
 
-COPY ./project .
+COPY ./app .
 ENTRYPOINT npm start

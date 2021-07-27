@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Tests
         run: npx jest tests/root.test.js
-        working-directory: ./project
+        working-directory: ./app
