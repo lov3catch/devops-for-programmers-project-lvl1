@@ -9,5 +9,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Tests
-        run: make test
+        run: make ci-test
         working-directory: ./project

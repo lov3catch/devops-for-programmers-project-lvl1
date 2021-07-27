@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "jest": "^27.0.6",
-    "pg": "^8.0.3"
+    "pg": "^8.6.0"
   },
   "dependencies": {
     "strapi": "3.6.5",

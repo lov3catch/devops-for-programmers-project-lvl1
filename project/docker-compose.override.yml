@@ -4,11 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    ports:
-      - "8080:8080"
     expose:
       - 8080
-#    tty: true
     depends_on:
       - db
     volumes:
@@ -21,9 +18,6 @@ services:
       - "443:443"
     depends_on:
       - app
-    expose:
-      - 80
-      - 443
     volumes:
       - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
       - $PWD:/srv
