@@ -18,6 +18,3 @@ docker-push:
 docker-test:
 	docker build . -t hxlt-lvl1
 	docker run -itv ${PWD}/app:/app hxlt-lvl1
-
-test:
-	npx jest tests/root.test.js
