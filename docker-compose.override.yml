@@ -4,8 +4,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    expose:
+      - 8080
     ports:
       - "8080:8080"
     volumes:
       - ./app:/app
     command: npm start
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  caddy_data:
+  caddy_config:
