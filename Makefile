@@ -6,3 +6,9 @@ test:
 
 install-deps:
 	docker-compose -f docker-compose.yml run --rm app npm install
+
+build:
+	docker-compose -f docker-compose.yml build app
+
+push:
+	docker-compose -f docker-compose.yml push app

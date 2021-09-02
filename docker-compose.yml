@@ -3,7 +3,8 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.production
+    image: lov3catch/devops1
     ports:
       - "8080:8080"
     volumes:
