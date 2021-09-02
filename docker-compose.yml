@@ -4,9 +4,21 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    image: lov3catch/devops1
+    image: lov3catch/devops1:latest
     ports:
       - "8080:8080"
+    depends_on:
+      - db
     volumes:
       - ./app:/app
     command: npm test
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: postgres
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_SQL: 0
