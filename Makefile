@@ -2,6 +2,7 @@ up:
 	docker-compose up
 
 test:
+	docker-compose build
 	docker-compose -f docker-compose.yml run --rm app npm test
 
 install-deps:
