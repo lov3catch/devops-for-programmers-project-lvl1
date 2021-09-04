@@ -3,5 +3,4 @@
 
 - docker-compose + Dockerfile.production = тестирование продакшен-сборки
 
-
 - docker-compose.override + Dockerfile = локальная разработка
