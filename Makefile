@@ -4,7 +4,6 @@ up:
 	docker-compose up
 
 test:
-	docker-compose build --no-cache
 	docker-compose -f docker-compose.yml run --rm app npm test
 
 build:
