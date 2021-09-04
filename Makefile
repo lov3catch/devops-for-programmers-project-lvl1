@@ -4,6 +4,7 @@ up:
 	docker-compose up
 
 test:
+	docker-compose -f docker-compose.yml run --rm app npm install
 	docker-compose -f docker-compose.yml run --rm app npm test
 
 build:
