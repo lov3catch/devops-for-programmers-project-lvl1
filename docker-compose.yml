@@ -20,4 +20,4 @@ services:
     image: postgres
     restart: always
     env_file:
-      - app/.env.dist
+      - app/.env.example
