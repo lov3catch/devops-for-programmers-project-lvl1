@@ -15,7 +15,7 @@ services:
       - ./app:/app
     command: npm test
     env_file:
-      - app/.env
+      - app/.env.example
   db:
     image: postgres
     restart: always
