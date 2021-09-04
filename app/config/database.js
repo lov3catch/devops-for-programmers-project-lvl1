@@ -10,7 +10,7 @@ module.exports = ({ env }) => ({
         database: env('POSTGRES_DB', 'postgres'),
         username: env('POSTGRES_USER', 'postgres'),
         password: env('POSTGRES_PASSWORD', 'example'),
-        ssl: env('POSTGRES_SQL', false)
+        ssl: env('POSTGRES_SSL', false)
       },
       options: {
         useNullAsDefault: true,
